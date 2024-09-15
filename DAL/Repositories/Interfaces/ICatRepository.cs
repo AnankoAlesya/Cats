@@ -14,6 +14,6 @@ namespace DAL.Repositories.Interfaces
         void Update(int ID, Cat cat);
         void Remove(Cat cat);
         List<Cat> GetAll();
-        Cat GetID(int ID);
+        Cat GetById(int ID);
     }
 }
