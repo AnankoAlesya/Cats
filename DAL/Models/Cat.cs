@@ -9,10 +9,11 @@ namespace DAL.Models
     public class Cat
     {
         public int ID { get; set; }
-        public string Name {get;set; }
+        public string Name { get; set; }
         public int Age { get; set; }
         public string Poroda { get; set; }
         public string Adress { get; set; }
+
         public Cat(int ID, string Name, int Age, string Poroda, string Adress)
         {
             this.ID = ID;
@@ -24,7 +25,7 @@ namespace DAL.Models
 
         public override string ToString()
         {
-            return ID + " " + Name + " " + Age + " " + Poroda + " " + Adress;
+            return ID + "\n" + Name + " \n" + Age + " \n" + Poroda + " \n" + Adress;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DAL.Repositories.Implementations
 {
     public class CatRepository:ICatRepository
     {
-        List<Cat> cats = [];
+        private readonly List<Cat> cats = [];
         public void Add(Cat cat)
         {
             foreach (Cat c in cats)
@@ -22,14 +22,11 @@ namespace DAL.Repositories.Implementations
                     Console.WriteLine("Кот с такой кличкой уже есть!");
                 }
             }
-                cats.Add(cat);
-            
-            
+            cats.Add(cat); 
         }
 
         public List<Cat> GetAll()
         {
-
             return cats;
         }
 
@@ -40,27 +37,21 @@ namespace DAL.Repositories.Implementations
                 
             }
             return null;
-
         }
 
         public void Remove(Cat cat)
         {
             foreach (Cat c in cats)
             {
-                if (c.Name == cat.Name) { cats.Remove(cat); }
-                else { Console.WriteLine("Такого кота не существует!"); }
+                if (c.Name == cat.Name) cats.Remove(cat);
             }
-           
+            Console.WriteLine("Такого кота не существует!");
         }
 
 
-        public void Update(Cat cat, int ID)
+        public void Update(int ID, Cat cat)
         {
-            Cat c = GetID(ID);
-            c.Name = cat.Name;
-            c.Age = cat.Age;
-            c.Poroda = cat.Poroda;
-            c.Adress = cat.Adress;
+            Cat c = cat;
         }
     }
 }
